@@ -1,0 +1,8 @@
+[14-Jun-2018 16:56:36 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/gheav/public_html/myvb/database/db.php on line 3
+[14-Jun-2018 16:58:42 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/gheav/public_html/myvb/database/db.php on line 3
+[14-Jun-2018 16:58:42 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/gheav/public_html/myvb/database/db.php on line 3
+[14-Jun-2018 16:59:00 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/gheav/public_html/myvb/database/db.php on line 3
+[14-Jun-2018 16:59:00 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/gheav/public_html/myvb/database/db.php on line 3
+[05-Jul-2018 03:49:12 UTC] PHP Notice:  Undefined variable: status in /home/gheav/public_html/myvb/database/insert.php on line 8
+[05-Jul-2018 03:51:41 UTC] PHP Notice:  Undefined variable: status in /home/gheav/public_html/myvb/database/insert.php on line 8
+[05-Jul-2018 03:53:25 UTC] PHP Notice:  Undefined variable: status in /home/gheav/public_html/myvb/database/insert.php on line 8
