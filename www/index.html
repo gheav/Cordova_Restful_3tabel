@@ -13,7 +13,23 @@
                 var title = field.title;
                 var duration = field.duration;
                 var price = field.price;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "'><span class='item-note'>Rp." + price +",00"+ "</span><h2>" + title + " </h2><p>" + duration + "</p></a>");
+                var status = field.status;
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "'><span class='item-note'>Rp." + price +",00"+ "</span><h2>" + title + " </h2><p>" + duration + "</p><p>" + status + "</p></a>");
+            });
+        });
+    });
+    </script>
+	<script type="text/javascript">
+    $(document).ready(function() {
+        var url = "https://myvb.ml/database/user.php";
+        $.getJSON(url, function(result) {
+            console.log(result);
+            $.each(result, function(i, field) {
+                var id_user = field.id_user;
+                var nama = field.nama;
+                var saldo = field.saldo;
+              
+                $("#user").append("<h2>Welcome " + nama + "! </h2><p> Saldo Rp." + saldo + ",00</p>");
             });
         });
     });
@@ -27,6 +43,10 @@
     </div>
     <br/>
     <br/>
+    <br/>
+	<div id="user" align="center"></div>
+    <br/>
+    
     <ul class="list" id="listview">
     </ul>
 </body>
