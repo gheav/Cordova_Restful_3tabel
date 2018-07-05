@@ -9,8 +9,9 @@
             var title = $("#title").val();
             var duration = $("#duration").val();
             var price = $("#price").val();
-            var dataString = "title=" + title + "&duration=" + duration + "&price=" + price + "&insert=";
-            if ($.trim(title).length > 0 & $.trim(duration).length > 0 & $.trim(price).length > 0) {
+            var status = $("#status").val();
+            var dataString = "title=" + title + "&duration=" + duration + "&price=" + price +  "&status=" + status +"&insert=";
+            if ($.trim(title).length > 0 & $.trim(duration).length > 0 & $.trim(price).length > 0 & $.trim(status).length > 0) {
                 $.ajax({
                     type: "POST",
                     url: "https://myvb.ml/database/insert.php",
@@ -58,6 +59,15 @@
             <label>Harga</label>
             <input type="text" id="price" value="" />
         </div>
+		<div class="item">
+  <label for="status">Tipe Transaksi:</label>
+  <select id="status">
+    <option selected>--Pilih Tipe Transaksi--</option>
+    <option value="1">Pemasukan</option>
+    <option value="2">Pengeluaran</option>
+ 
+  </select>
+</div>
         <div class="item">
             <input type="button" id="insert" class="bar-balanced		 button button-block" value="Tambah" />
         </div>
