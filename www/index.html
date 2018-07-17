@@ -5,23 +5,23 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var url = "https://myvb.ml/database/json.php";
+        var url = "https://myvb.ml/database/json_data.php";
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
-                var id = field.id;
-                var title = field.title;
-                var duration = field.duration;
-                var price = field.price;
+                var id_transaksi = field.id_transaksi;
+                var nama_transaksi = field.nama_transaksi;
+                var tanggal = field.tanggal;
+                var jumlah = field.jumlah;
                 var status = field.status;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "'><span class='item-note'>Rp." + price +",00"+ "</span><h2>" + title + " </h2><p>" + duration + "</p><p>" + status + "</p></a>");
+                $("#listview").append("<a class='item' href='update_data.html?id_transaksi=" + id_transaksi + "&nama_transaksi=" + nama_transaksi + "&tanggal=" + tanggal + "&jumlah=" + jumlah + "'><span class='item-note'>Rp." + jumlah +",00"+ "</span><h2>" + nama_transaksi + " </h2><p>" + tanggal + "</p><p>" + status + "</p></a>");
             });
         });
     });
-    </script>
-	<script type="text/javascript">
-    $(document).ready(function() {
-        var url = "https://myvb.ml/database/user.php";
+  
+
+		 $(document).ready(function() {
+        var url = "https://myvb.ml/database/json_user.php";
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
@@ -29,7 +29,7 @@
                 var nama = field.nama;
                 var saldo = field.saldo;
               
-                $("#user").append("<h2>Welcome " + nama + "! </h2><p> Saldo Rp." + saldo + ",00</p>");
+                $("#user").append("<h2>Welcome " + nama + "! </h2><p> Saldo Cash Rp." + saldo + ",00</p>");
             });
         });
     });
@@ -39,7 +39,8 @@
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
         <a href="insert.html" class="button button-icon"> +Tambah</a>
-        <h1 class="title"><b>CATKEUKU</b></h1>
+        <a href="tabungan.html" class="button button-icon"> Tabungan</a>
+        <h1 align="right" class="title"  ><b>CATKEUKU</b></h1>
     </div>
     <br/>
     <br/>
