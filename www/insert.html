@@ -6,12 +6,12 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $("#insert").click(function() {
-            var title = $("#title").val();
-            var duration = $("#duration").val();
-            var price = $("#price").val();
+            var nama_transaksi = $("#nama_transaksi").val();
+            var tanggal = $("#tanggal").val();
+            var jumlah = $("#jumlah").val();
             var status = $("#status").val();
-            var dataString = "title=" + title + "&duration=" + duration + "&price=" + price +  "&status=" + status +"&insert=";
-            if ($.trim(title).length > 0 & $.trim(duration).length > 0 & $.trim(price).length > 0 & $.trim(status).length > 0) {
+            var dataString = "nama_transaksi=" + nama_transaksi + "&tanggal=" + tanggal + "&jumlah=" + jumlah +  "&status=" + status +"&insert=";
+            if ($.trim(nama_transaksi).length > 0 & $.trim(tanggal).length > 0 & $.trim(jumlah).length > 0 & $.trim(status).length > 0) {
                 $.ajax({
                     type: "POST",
                     url: "https://myvb.ml/database/insert.php",
@@ -46,18 +46,18 @@
     <br/>
     <br/>
     <div class="list">
-        <input type="hidden" id="id" value="" />
+        <input type="hidden" id="id_transaksi" value="" />
         <div class="item">
             <label>Nama Transaksi</label>
-            <input type="text" id="title" value="" />
+            <input type="text" id="nama_transaksi" value="" />
         </div>
         <div class="item">
             <label>Tanggal</label>
-            <input type="date" id="duration" value="" />
+            <input type="date" id="tanggal" value="" />
         </div>
         <div class="item">
             <label>Harga</label>
-            <input type="text" id="price" value="" />
+            <input type="number" id="jumlah" value="" />
         </div>
 		<div class="item">
   <label for="status">Tipe Transaksi:</label>
