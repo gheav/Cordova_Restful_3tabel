@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/ionic.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/geturi.js"></script>
+    <script type="text/javascript">
+  
+		 $(document).ready(function() {
+        var url = "https://myvb.ml/database/json_tabungan.php";
+        $.getJSON(url, function(result) {
+            console.log(result);
+            $.each(result, function(i, field) {
+                var id_tabungan= field.id_tabungan;
+                var nama_bank = field.nama_bank;
+                var jumlah_tabungan = field.jumlah_tabungan;
+              
+                $("#tabunganku").append("<h2>Rekening di " + nama_bank + "! </h2><p> Saldo Cash Rp." + jumlah_tabungan + ",00</p>");
+            });
+        });
+    });
+
+    </script>
+</head>
+
+<body>
+    <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
+        <a href="index.html" class="button button-clear">Home</a>
+        <h1 class="title">Update Database</h1>
+  
+    </div>
+    <br/>
+    <br/>
+    <br/>
+	<div id="tabunganku" align="center"></div>
+    <br/>
+    <div class="list">
+       
+        <div class="item">
+            <label>Nama Transaksi</label>
+            <input type="text" id="transaksiku" value="" />
+        </div>
+        <div class="item">
+            <label>Jumlah</label>
+            <input type="text" id="jumlahtransaksi" value="" />
+        </div>
+
+        <div class="item">
+            <input type="button" id="update" class="button button-block" value="Update" />
+   
+        </div>
+    </div>
+</body>
+
+</html>
