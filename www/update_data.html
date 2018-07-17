@@ -6,20 +6,20 @@
     <script type="text/javascript" src="js/geturi.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var id = decodeURI(getUrlVars()["id"]);
-        var title = decodeURI(getUrlVars()["title"]);
-        var duration = decodeURI(getUrlVars()["duration"]);
-        var price = decodeURI(getUrlVars()["price"]);
-        $("#id").val(id);
-        $("#title").val(title);
-        $("#duration").val(duration);
-        $("#price").val(price);
+        var id_transaksi = decodeURI(getUrlVars()["id_transaksi"]);
+        var nama_transaksi = decodeURI(getUrlVars()["nama_transaksi"]);
+        var tanggal = decodeURI(getUrlVars()["tanggal"]);
+        var jumlah = decodeURI(getUrlVars()["jumlah"]);
+        $("#id_transaksi").val(id_transaksi);
+        $("#nama_transaksi").val(nama_transaksi);
+        $("#tanggal").val(tanggal);
+        $("#jumlah").val(jumlah);
         $("#update").click(function() {
-            var id = $("#id").val();
-            var title = $("#title").val();
-            var duration = $("#duration").val();
-            var price = $("#price").val();
-            var dataString = "id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "&update=";
+            var id_transaksi = $("#id_transaksi").val();
+            var nama_transaksi = $("#nama_transaksi").val();
+            var tanggal = $("#tanggal").val();
+            var jumlah = $("#jumlah").val();
+            var dataString = "id_transaksi=" + id_transaksi + "&nama_transaksi=" + nama_transaksi + "&tanggal=" + tanggal + "&jumlah=" + jumlah + "&update=";
             $.ajax({
                 type: "POST",
                 url: "https://myvb.ml/database/update.php",
@@ -41,8 +41,8 @@
 
         });
         $("#delete").click(function() {
-            var id = $("#id").val();
-            var dataString = "id=" + id + "&delete=";
+            var id_transaksi = $("#id_transaksi").val();
+            var dataString = "id_transaksi=" + id_transaksi + "&delete=";
             $.ajax({
                 type: "GET",
                 url: "https://myvb.ml/database/delete.php",
@@ -71,23 +71,23 @@
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
         <a href="index.html" class="button button-clear">Home</a>
         <h1 class="title">Update Database</h1>
-        <a class="button button-clear" href="insert.html">+Tambah</a>
+  
     </div>
     <br/>
     <br/>
     <div class="list">
-        <input type="hidden" id="id" value="" />
+        <input type="hidden" id="id_transaksi" value="" />
         <div class="item">
             <label>Nama Transaksi</label>
-            <input type="text" id="title" value="" />
+            <input type="text" id="nama_transaksi" value="" />
         </div>
         <div class="item">
             <label>Tanggal</label>
-            <input type="text" id="duration" value="" />
+            <input type="text" id="tanggal" value="" />
         </div>
         <div class="item">
             <label>Harga</label>
-            <input type="text" id="price" value="" />
+            <input type="text" id="jumlah" value="" />
         </div>
         <div class="item">
             <input type="button" id="update" class="button button-block" value="Update" />
